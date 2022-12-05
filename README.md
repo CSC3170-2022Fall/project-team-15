@@ -23,7 +23,7 @@ Our team consists of the following members, listed in the table below (the team 
 | 119010449  | 张依扬         | 119010449@link.cuhk.edu.cn        |
 | 119010464  | 郑佳辰         | zjc1617018@outlook.com            |
 | 119010395  | 姚南君         | annumyao@outlook.com            |
-| 119010395  | 宋知愉         | zhiyu.son@student.mahidol.ac.th            |
+| 122400001  | 宋知愉         | zhiyu.son@student.mahidol.ac.th            |
 
 ## Project Specification
 
