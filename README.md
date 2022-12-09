@@ -58,7 +58,7 @@ Moreover, some extensive settings are shown as follows:
 +  Geometrical Constraint: Considering the location of consumers and plants, those deal for a consumer and a plant that are too far away from each other can not be made
 +  Complex Plant: Some plants might hold multiple machine types and can be more flexible in chip processing.
 +  Centralized Banking System: A centralized banking system is added. 
-+  Set-up Cost for Set-up and Transportation: Set-up cost for a machine to process an operation whose operation type differs from the formerly processed one transportation cost considering the distance of their location
++  Set-up Cost for Transportation: Transportation cost considering the distance of their location
 
 
 
