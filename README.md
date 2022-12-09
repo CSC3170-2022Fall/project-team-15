@@ -19,7 +19,7 @@ Our team consists of the following members, listed in the table below (the team 
 | Student ID | Student Name | GitHub Account (in Email) | GitHub id |
 | ---------- | ------------ | ------------------------- | --------- |
 | 119010363  | 徐亦宸 🚩      | 119010363@link.cuhk.edu.cn        | Xyc-arch |
-| 120090881  | 赵健翔         | 2075750149@qq.com          |         |
+| 120090881  | 赵健翔         | 2075750149@qq.com          | 120090881 |
 | 119010449  | 张依扬         | 119010449@link.cuhk.edu.cn        | krinko7 |
 | 119010464  | 郑佳辰         | zjc1617018@outlook.com            | 19010464 |
 | 119010395  | 姚南君         | annumyao@outlook.com            | annumYao |
