@@ -11,10 +11,10 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Consumer table
 CREATE TABLE consumer(
    consumer_ID numeric(3, 0),
-   consumerLocation varchar(40) not null,
+   consumerLocation varchar(40) not null, -- Changed the name to differentiate between plantLocation and consumerLocation
    package_ID numeric(3, 0) not null,
    conBankAccount_ID numeric(5, 0) not null,
-   plant_ID varchar(20), -- Changed the name to differentiate between plantLocation and consumerLocation
+   plant_ID varchar(20),
    primary key(consumer_ID)
 );
 
@@ -30,8 +30,8 @@ CREATE TABLE package(
 CREATE TABLE chip(
    chip_ID varchar(7),
    chipType_ID char(2) not null,
-   machine_ID varchar(20) not null,
-   primary key(chip_ID)
+   operation_ID varchar(20) not null,
+   primary key(chip_ID, chipType_ID)
 );
 
 -- Plant table
@@ -112,7 +112,7 @@ CREATE TABLE chip_processed_plant(
 CREATE TABLE chip_pre_operation(
    chipType_ID char(2),
    operation_ID varchar(20),
-   precedency varchar(100) not null,
+   precedency varchar(10) not null,
    primary key(chipType_ID, operation_ID)
 );
 
@@ -127,8 +127,7 @@ CREATE TABLE plant_holds_machine(
 -- MachineAbilityOperation
 CREATE TABLE machine_ability_operation(
    machine_ID varchar(10),
-   opeation_ID varchar(20),
-   feasibility varchar(30) not null,
+   opeation_ID varchar(20),-- feasibility varchar(30) not null
    timeNeeded decimal(10, 0),
    machineExpense decimal(10, 0),
    primary key(machine_ID, operation_ID)
