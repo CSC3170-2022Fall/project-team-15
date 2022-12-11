@@ -16,14 +16,14 @@ Our team consists of the following members, listed in the table below (the team 
 
 <!-- change the info below to be the real case -->
 
-| Student ID | Student Name | GitHub Account (in Email) |
-| ---------- | ------------ | ------------------------- |
-| 119010363  | 徐亦宸 🚩      | 119010363@link.cuhk.edu.cn        |
-| 120090881  | 赵健翔         | 2075750149@qq.com          |
-| 119010449  | 张依扬         | 119010449@link.cuhk.edu.cn        |
-| 119010464  | 郑佳辰         | zjc1617018@outlook.com            |
-| 119010395  | 姚南君         | annumyao@outlook.com            |
-| 122400001  | 宋知愉         | zhiyu.son@student.mahidol.ac.th            |
+| Student ID | Student Name | GitHub Account (in Email) | GitHub id |
+| ---------- | ------------ | ------------------------- | --------- |
+| 119010363  | 徐亦宸 🚩      | 119010363@link.cuhk.edu.cn        | Xyc-arch |
+| 120090881  | 赵健翔         | 2075750149@qq.com          | 120090881 |
+| 119010449  | 张依扬         | 119010449@link.cuhk.edu.cn        | krinko7 |
+| 119010464  | 郑佳辰         | zjc1617018@outlook.com            | 19010464 |
+| 119010395  | 姚南君         | annumyao@outlook.com            | annumYao |
+| 122400001  | 宋知愉         | zhiyu.son@student.mahidol.ac.th            | Mralwayswins |
 
 ## Project Specification
 
@@ -58,7 +58,7 @@ Moreover, some extensive settings are shown as follows:
 +  Geometrical Constraint: Considering the location of consumers and plants, those deal for a consumer and a plant that are too far away from each other can not be made
 +  Complex Plant: Some plants might hold multiple machine types and can be more flexible in chip processing.
 +  Centralized Banking System: A centralized banking system is added. 
-+  Set-up Cost for Set-up and Transportation: Set-up cost for a machine to process an operation whose operation type differs from the formerly processed one transportation cost considering the distance of their location
++  Set-up Cost for Transportation: Transportation cost considering the distance of their location
 
 
 

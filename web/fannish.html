@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原创首页</title>
+  <link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/login.css">
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box {
+        display: none;
+        font-size: 35px;
+        text-align: center;
+        width: 40%;
+        height: 400px;
+        background: rgba(0,0,0,.5);
+        
+    }
+    
+    .content {
+        background-color: #fff;
+        opacity: .7;
+        width: 80%;
+        color: #fff;
+        height: 80%;
+        margin: auto;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1E9FFF;
+        justify-content: center;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+    <div style="display: inline-block;position: absolute;left: calc(50% - 100px);" class="erweima">
+        <img src="https://simg.doubanio.com/dae/qrgen/v2/https%3A//accounts.douban.com/passport/qrlogin%3Fcode%3Ddouban-qrlogin%7CjLqve9/YgdJMRg.png" style="display: block; margin: 0 auto;width: 200px;height: 200px;">
+    </div>
+    <div id="box" class="layui-anim layui-anim-scale">
+        <div class="content">
+            已完成
+        </div>
+    </div>
+</body>
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $('.erweima').on('click',function () {
+        $('.erweima').css('display','none')
+        $('#box').css('display','block')
+    })
+</script>
+</script>
+</html>
