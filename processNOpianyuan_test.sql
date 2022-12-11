@@ -13,8 +13,8 @@ begin
                 SELECT pc.chip_ID
                 from package_chips pc
                 where pc.package_ID = _package
-            )
+            )limit _process,1;
         )
     )
-    limit _process,1;
+    
 end;

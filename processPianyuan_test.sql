@@ -29,9 +29,9 @@ create procedure process(In _process int, IN _consumer int, IN _package int, OUT
                     SELECT pc.chip_ID
                     from package_chips pc
                     where pc.package_ID = _package
-                )
+                )limit _process,1;
             )
         )
     )
-    limit _process,1;
+    
 end;
