@@ -67,6 +67,7 @@ CREATE TABLE operation(
 -- PlanRecord table
 CREATE TABLE planRecord(
    operation_ID varchar(20),
+   plant_ID varchar(10) not null,
    machine_ID varchar(10),
    planStartTime time not null, -- Assume won't take one day
    planEndTime time not null, -- Assume won't take one day
@@ -78,6 +79,7 @@ CREATE TABLE planRecord(
 -- ActualRecord table
 CREATE TABLE actualRecord(
    operation_ID varchar(20),
+   plant_ID varchar(10) not null,
    machine_ID varchar(10),
    actStartTime time not null, -- Assume won't take one day
    actEndTime time not null, -- Assume won't take one day
@@ -127,8 +129,8 @@ CREATE TABLE plant_holds_machine(
 -- MachineAbilityOperation
 CREATE TABLE machine_ability_operation(
    machine_ID varchar(10),
-   opeation_ID varchar(20),-- feasibility varchar(30) not null
-   timeNeeded decimal(10, 0),
+   opeation_ID varchar(20),-- Feasibility varchar(30) not null
+   timeNeeded decimal(10, 0), -- Measured in seconds
    machineExpense decimal(10, 0),
    primary key(machine_ID, operation_ID)
 );
