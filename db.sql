@@ -11,10 +11,10 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 --
 
 INSERT INTO `consumer` (`consumer_ID`, `location`, `package_ID`, `conBankAccount_ID`, `plant_ID`) VALUES
-(`123`, `A`, `001`, `12345`, NULL),
-(`456`, `B`, `002`, `11155`, `plantA`),
-(`789`, `C`, `003`, `12233`, `plantC`)
-(`100`, `D`, `004`, `13566`, `plantD`);
+(`123`, `Longgang`, `001`, `12345`, NULL),
+(`456`, `Nanshan`, `002`, `11155`, `plantA`),
+(`789`, `Nanshan`, `003`, `12233`, `plantC`)
+(`100`, `Futian`, `004`, `13566`, `plantD`);
 
 INSERT INTO `orders`(`consumer_ID`, `package_ID`, `packageNum`) VALUES
 (`123`, `003`, `10`),
