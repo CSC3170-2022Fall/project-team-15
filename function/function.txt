@@ -1,0 +1,15 @@
+地址：infoCustiomLocation
+银行账户：infoCustiomAccount
+package类型（信息）：infoOfChoosePackage
+operation：chooseProcessNOpianyuan
+operation(偏远)：chooseProcessPianyuan
+operation（信息）：infoOfChooseProsecc
+处理工序：chooseMachine
+注册信息录入：register
+客户下单信息录入：writeInConsumer
+订单信息录入：writeInOrders
+生产记录录入writeInActualRecord
+生产计划录入writeInPlanRecord
+排队人数输出：outputPeople
+
+
