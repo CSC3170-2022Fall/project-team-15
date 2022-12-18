@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原创首页</title>
+  <link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <style>
+    .bigBox{
+        /* width: 300px;height: 400px; */
+        position: relative;
+        background: #2d3436;
+        color: #fff;
+    }
+    .bigBox::before,#box::after{
+        content: '';
+        background: linear-gradient(to top right,#b92b27,#2d3436,#1565c0);
+        top: -2px;left: -2px;right: -2px;bottom: -2px;
+        position: absolute;
+        z-index: -1;
+    }
+    .bigBox::before{
+        filter: blur(20px);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="bigBox">    
+    <form class="layui-form" action="">
+      <div class="userInfo boxBg1">
+        <div class="layui-form-item">
+          <label class="layui-form-label labelOne">用户：</label>
+          <div class="layui-input-block userName"></div><!-- 获取登录的手机号作为用户名 -->
+        </div>
+        <div class="layui-form-item">
+          <label class="layui-form-label labelOne">地址：</label>
+          <div class="layui-input-block adress">Longgang</div>
+        </div>  
+        <div class="layui-form-item">
+          <label class="layui-form-label labelOne">银行账户:   </label>
+          <div class="layui-input-block adress">12345</div>
+        </div> 
+      </div>
+      <div class="boxBg1">
+        <div class="layui-form-item">
+          <label class="layui-form-label">package类型:</label>
+          <div class="layui-input-block">
+            <select name="type" lay-verify="required" id="package" lay-filter="package" >
+              <option value=""></option>
+              <option value="1">package_ID1</option>
+              <option value="2">package_ID2</option>
+              <option value="3">package_ID3</option>
+              <option value="4">package_ID4</option>
+              <option value="5">package_ID5</option>
+            </select>
+            <input type="text" class="layui-input  selectTitle" value="对应处理工序" disabled readonly="true">
+          </div>
+          <!-- <div class="layui-input-block">
+            <textarea name="desc" disabled readonly="true" class="layui-textarea"></textarea>
+          </div> -->
+        </div>
+      </div>
+      <div class="boxBg1">
+        <div class="layui-form-item">
+          <!-- 排除时，所有选项C隐藏 -->
+          <label class="layui-form-label">是否排除偏远地区:</label>
+          <div class="layui-input-block">
+            <input type="checkbox" name="switch1" lay-skin="switch"  lay-filter="toggle1" >
+          </div>
+        </div>
+        <div class="layui-form-item item item1">
+          <label class="layui-form-label">operation 1:</label>
+          <div class="layui-input-block">
+            <select name="package1" id="package1" lay-filter="package1">
+              <option value="" id="option1"></option>
+              <option value="工厂A">工厂A</option>
+              <option value="工厂B">工厂B</option>
+              <option value="工厂C" class="optionC">工厂C</option>
+              <option value="工厂D">工厂D</option>
+            </select>
+            <input type="text" class="layui-input selectText selectText1" value="可行工厂" disabled readonly="true">
+          </div>
+        </div>
+        <div class="layui-form-item item item2">
+          <label class="layui-form-label">operation 2:</label>
+          <div class="layui-input-block">
+            <select name="package2" id="package2" lay-filter="package2" >
+              <option value=""></option>
+              <option value="工厂B">工厂B</option>
+              <option value="工厂C" class="optionC">工厂C</option>
+              <option value="工厂D">工厂D</option>
+              <option value="工厂E">工厂E</option>
+            </select>
+            <input type="text" class="layui-input selectText selectText2" value="可行工厂" disabled readonly="true">
+          </div>
+        </div>
+        <div class="layui-form-item item item3">
+          <label class="layui-form-label">operation 3:</label>
+          <div class="layui-input-block">
+            <select name="package3" id="package3" lay-filter="package3" >
+              <option value=""></option>
+              <option value="工厂C" class="optionC">工厂C</option>
+              <option value="工厂D">工厂D</option>
+              <option value="工厂E">工厂E</option>
+            </select>
+            <input type="text" class="layui-input selectText selectText3" value="可行工厂" disabled readonly="true">
+          </div>
+        </div>
+      </div>
+      <div class="boxBg1">
+        <div class="layui-form-item" >
+          <!-- 选择最优机器搭配时，所有选项C隐藏 -->
+          <label class="layui-form-label">自动选择最优机器搭配:</label>
+          <div class="layui-input-block">
+            <input type="checkbox" name="switch2" lay-skin="switch"  lay-filter="toggle2" >
+          </div>
+        </div>
+        <!-- 上面程序选中的工厂，可能两个，也可能三个 -->
+        <div class="layui-form-item factoryItem factoryItem1">
+          <label class="layui-form-label"><span class="factoryOne"></span>&nbsp;&nbsp;处理工序1:</label>
+          <div class="layui-input-block">
+            <select name="factory1" id="factory1" lay-filter="factory1">
+              <option value=""></option>
+              <option value="甲">甲</option>
+              <option value="乙">乙</option>
+              <option value="丙">丙</option>
+              <option value="丁">丁</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item factoryItem factoryItem2">
+          <label class="layui-form-label"><span><span class="factoryTwo"></span></span>处理工序2:</label>
+          <div class="layui-input-block">
+            <select name="factory2"  id="factory2" lay-filter="factory2">
+              <option value=""></option>
+              <option value="甲">甲</option>
+              <option value="乙">乙</option>
+              <option value="丙">丙</option>
+              <option value="丁">丁</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item factoryItem factoryItem3">
+          <label class="layui-form-label"><span><span class="factoryThree"></span></span>处理工序3:</label>
+          <div class="layui-input-block">
+            <select name="factory3"  id="factory3" lay-filter="factory3">
+              <option value=""></option>
+              <option value="甲">甲</option>
+              <option value="乙">乙</option>
+              <option value="丙">丙</option>
+              <option value="丁">丁</option>
+            </select>
+          </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+          <div class="layui-input-block pageContent1 pageContent11 layui-anim layui-anim-down" style="margin-left: 0;">
+            <p><span class="p"></span></p>
+            <p><span class="conmmon p1"></span><span class="jq j1"></span></p>
+            <p><span class="conmmon p2"></span><span class="jq j2"></span></p>
+            <p><span class="conmmon p3"></span><span class="jq j3"></span></p>
+          </div>
+          <div class="layui-input-block pageContent1 pageContent12 layui-anim layui-anim-down">
+          </div>
+        </div>  
+      </div>
+      
+
+      <div class="layui-form-item" style="display: flex;margin: 0 auto;justify-content: center;">
+        <div class="layui-input-block" style="margin: 0;">
+          
+          <button type="reset" class="cancel layui-btn layui-btn-primary">重置</button>
+          <div class="sureBtn"><a href="./fannish.html">确认</a></div>
+          <!-- <button class="layui-btn sureBtn" lay-submit lay-filter="submitButton">确认</button> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  var chipType='';
+  var toggle1=false
+  var toggle2=false
+  $('.userName').text(localStorage.getItem('admin'))
+  layui.use('form', function(){
+    var form = layui.form;
+    
+    //提交
+    form.on('submit(formDemo)', function(data){
+      layer.msg(JSON.stringify(data.field));
+      return false;
+    });
+    //开关1
+    form.on('switch(toggle1)', function(data){
+      toggle1=data.elem.checked
+      if(toggle1) {
+        $('.optionC').removeClass('active1')
+        $('.optionC').addClass('hide1')
+        $("dd[lay-value*='工厂C']").css('display','none')
+      }else {
+        $('.optionC').removeClass('hide1')
+        $('.optionC').addClass('active1')
+        $("dd[lay-value*='工厂C']").css('display','block')
+      }
+    })
+    //开关2
+    form.on('switch(toggle2)', function(data){
+      toggle2=data.elem.checked
+      if(toggle2) {
+        setTimeout(function(){ 
+          $('.active2').addClass('hide2')
+          $('.pageContent11').addClass('hide3')
+          $('.pageContent12').css('display','block')
+          $('.pageContent12').html('package_ID5\n operation1: 工厂D     机器：乙 处理工艺：etch 处理时长：3h 处理金额：3000 排队人数：0 总时长：3h \n operation2: 工厂B      机器：甲 处理工艺：design-import 处理时长：2h 处理金额：2000 排队人数：2 总时长：7h \noperation3: 工厂E     机器：丙 处理工艺：drill 处理时长：4h 处理金额：4500 排队人数：1 总时长：8h'
+            + '   总计：最少等待8h，花费9500'  )
+          $('.factoryItem .layui-unselect').val(" ")
+        },1000);
+        
+      }else {
+        setTimeout(function(){ 
+          $('.pageContent11').removeClass('hide3')
+          $('.pageContent12').css('display','none')
+          $('.active2').removeClass('hide2')
+          $('.jq').text('')
+        },1000);
+       
+      }
+    })
+    //下拉框
+    var form = layui.form;
+    form.on('select(package)', function(){
+      //1:拿到select对象： 
+      var myselect=document.getElementById("package");
+      //2：拿到选中项的索引：
+      var index=myselect.selectedIndex ; // selectedIndex代表的是你所选中项的index
+      //3:拿到选中项options的value：
+      chipType=myselect.options[index].value
+      //4:拿到选中项options的text： 
+      var text1=''
+      if(chipType==1) {
+        text1 = 'chip1:10 chip3:30，需要operation：1，2'
+      }else if(chipType==2) {
+        text1 = 'chip2:20 ，需要operation：2，3'
+      }else if(chipType==3||chipType==4) {
+        text1 = 'chip3:20 chip4:35 ，需要operation：1，3'
+      }else if(chipType==5) {
+        text1 = 'chip5:30 ，需要operation：1，2， 3'
+      }
+      console.log('selected0.2',myselect.options[index].text);
+      setTimeout(function(){
+        $('.p').text(`${myselect.options[index].text}`)
+        $('.selectTitle').val(text1)
+      },500);      
+      $('.conmmon').text(``)
+      $('.jq').text(``)
+
+      $('.item').css('display','none')
+      $('.factoryItem').removeClass('active2')
+      $('.factoryItem').addClass('hide2')
+
+      $('.item .layui-unselect').val("")
+      $(".selectText").val("可选工厂")
+
+      $('.factoryItem .layui-unselect').val(" ")
+
+      if(chipType==1) {
+        $('.item1').css('display','block')
+        $('.item2').css('display','block')
+      }else if(chipType==2) {
+        $('.item2').css('display','block')
+        $('.item3').css('display','block')
+      }else if(chipType==3||chipType==4) {
+        $('.item1').css('display','block')
+        $('.item3').css('display','block')
+      }else if(chipType==5) {
+        $('.item').css('display','block')
+      }
+    });
+    var text_A="工厂A 工厂位置：Longgang owner：plantOwner1 工厂账户：156777 拥有机器类型：machine1*5"
+    var text_B="工厂B 工厂位置：Futian owner：plantOwner2 工厂账户：235000 拥有机器类型：machine2*20 machine5*5"
+    var text_C="工厂C 工厂位置：Baoan owner：plantOwner2 工厂账户：235000 拥有机器类型：machine1*5 machine2*10 machine4*10"
+    var text_D="工厂D 工厂位置：Nanshan owner：plantOwner3 工厂账户：147888 拥有机器类型：machine3*10 machine4*15 machine5*5"
+    var text_E="工厂E 工厂位置：Longgang owner：plantOwner1 工厂账户：156777 拥有机器类型：machine4*10"
+    form.on('select(package1)', function(){
+      var myselect1=document.getElementById("package1");
+      var index=myselect1.selectedIndex ;
+      var text_2
+      setTimeout(function(){ 
+        $('.p1').text(`operation1: ${myselect1.options[index].text}`)
+        if(index==1) {
+          text_2 = text_A
+        }else if(index==2) {
+          text_2 = text_B
+        }else if(index==3) {
+          text_2 = text_C
+        }else if(index==4) {
+          text_2 = text_D
+        }else if(index==5) {
+          text_2 = text_E
+        }
+        $('.selectText1').val(text_2)
+        $('.factoryOne').text(`${myselect1.options[index].value} `)
+      },500);
+      
+      if(!toggle2) {
+        $('.factoryItem1').removeClass('hide2').addClass('active2')
+      }
+    });
+    form.on('select(package2)', function(){
+      var myselect2=document.getElementById("package2");
+      var index=myselect2.selectedIndex ; 
+      var text_2;
+      if(index==1) {
+        text_2 = text_B
+      }else if(index==2) {
+        text_2 = text_C
+      }else if(index==3) {
+        text_2 = text_D
+      }else if(index==4) {
+        text_2 = text_E
+      }
+      setTimeout(function(){ 
+        $('.p2').text(`operation2: ${myselect2.options[index].text} `)
+        $('.selectText2').val(text_2)
+        $('.factoryTwo').text(`${myselect2.options[index].value}`)
+      },500);
+      
+      if(!toggle2) {
+        $('.factoryItem2').removeClass('hide2').addClass('active2')
+      }
+    });
+    form.on('select(package3)', function(){
+      var myselect3=document.getElementById("package3");
+      var index=myselect3.selectedIndex ;
+      var text_2;
+      if(index==1) {
+        text_2 = text_c
+      }else if(index==2) {
+        text_2 = text_D
+      }else if(index==3) {
+        text_2 = text_E
+      }
+      setTimeout(function(){ 
+        $('.p3').text(`operation3: ${myselect3.options[index].text}`)
+        $('.selectText3').val(text_2)
+        $('.factoryThree').text(`${myselect3.options[index].value}`)   
+      },500);
+      
+      if(!toggle2) {
+        $('.factoryItem3').removeClass('hide2').addClass('active2')
+      }
+      
+    });
+    
+    var text_j="  处理工艺：design-import 处理时长：2h  处理金额：2000 排队人数：2 总时长：7h"
+    var text_y="  处理工艺：etch 处理时长：3h  处理金额：3000 排队人数：0 总时长：3h"
+    var text_b="  处理工艺：drill 处理时长：4h  处理金额：4500 排队人数：1 总时长：8h"
+    var text_d="  处理工艺：design-import 处理时长：2.5h  处理金额：1600 排队人数：3 总时长：7.5h"
+
+    form.on('select(factory1)', function(){
+      var myselect1=document.getElementById("factory1");
+      var index=myselect1.selectedIndex ;
+      var text_3
+      if(index==1) {
+        text_3 = text_j
+      }else if(index==2) {
+        text_3 = text_y
+      }else if(index==3) {
+        text_3 = text_b
+      }else if(index==4) {
+        text_3 = text_d
+      }
+      setTimeout(function(){ 
+        $('.j1').html(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机器：${myselect1.options[index].text} ` + text_3 )
+      },500);
+    });
+    form.on('select(factory2)', function(){
+      var myselect2=document.getElementById("factory2");
+      var index=myselect2.selectedIndex ;
+      var text_3
+      if(index==1) {
+        text_3 = text_j
+      }else if(index==2) {
+        text_3 = text_y
+      }else if(index==3) {
+        text_3 = text_b
+      }else if(index==4) {
+        text_3 = text_d
+      }
+      setTimeout(function(){ 
+        $('.j2').html(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机器：${myselect2.options[index].text}`+ text_3)
+      },500);
+    });
+    form.on('select(factory3)', function(){
+      var myselect3=document.getElementById("factory3");
+      var index=myselect3.selectedIndex ;
+      var text_3
+      if(index==1) {
+        text_3 = text_j
+      }else if(index==2) {
+        text_3 = text_y
+      }else if(index==3) {
+        text_3 = text_b
+      }else if(index==4) {
+        text_3 = text_d
+      }
+      setTimeout(function(){ 
+        $('.j3').html(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机器：${myselect3.options[index].text}`+ text_3)
+      },500);
+     
+    });
+  });
+</script>
+</html>
