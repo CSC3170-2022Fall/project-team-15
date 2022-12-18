@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>AI调度管理平台</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/statics/css/all.css" rel="stylesheet">
+    <link href="/statics/css/myfont.css" rel="stylesheet">
+    <link href="/statics/css/styles.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="/statics/css/sidebars.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="col-2">
+            <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="height: 100vh;">
+                <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <i class="fas fa-cloud" style="font-size: 30px;"></i>
+                    <span class="fs-4">&nbsp; AI调度管理平台</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 主页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 智能标签
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/ai_cut/" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 智能拆条
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 智能唱词
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 人脸检测
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link active" aria-current="page">
+                            <svg class="bi me-2" width="16" height="16">
+                        </svg> 内容库
+                        </a>
+                    </li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+        <div class="col-10 container-fluid bg-light">
+            <div class="row container-fluid bg-light">
+                <header class="p-3 mb-3 border-bottom">
+                    <div class="container-fluid">
+                        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                                <li><a href="#" class="nav-link px-4 link-secondary">概况</a></li>
+                                <li><a href="#" class="nav-link px-4 link-dark">用户管理</a></li>
+                                <li><a href="#" class="nav-link px-4 link-dark">开发者支持</a></li>
+                                <li><a href="#" class="nav-link px-4 link-dark">帮助</a></li>
+                            </ul>
+
+                            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                            </form>
+
+                            <div class="dropdown text-end">
+                                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="/statics/images/头像.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+                                </a>
+                                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                    <li><a class="dropdown-item" href="#">个人信息</a></li>
+                                    <li><a class="dropdown-item" href="#">安全凭证</a></li>
+                                    <li><a class="dropdown-item" href="#">钱包</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">退出登录</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <div class="row my-3 mx-3 shadow">
+                <div class="col-8 my-2">
+                    <video class="video" poster="" width="960" height="540" controls preload>
+                        <source src="{{ video_path }}"
+                                media="only screen and (min-device-width: 568px)">
+                        </source>
+                    </video>
+
+                </div>
+                <div class="col-4 my-3">
+                    <h3 class="py-3 border-bottom">视频信息</h3>
+                    <div class="row my-3"><h5 class="col-3">视频名称</h5><p class="col-6"> {{ video_name }}</p></div>
+                    <div class="row my-3"><h5 class="col-3">视频大小</h5><p class="col-6">{{ video_size}}</p></div>
+                    <div class="row my-3"><h5 class="col-3">视频长度</h5><p class="col-6">{{ video_dur}}</p></div>
+                    <div class="row my-3"><h5 class="col-3">创建时间</h5><p class="col-6">{{ video_ctime}}</p></div>
+                    <div class="row my-3"><h5 class="col-3">视频描述</h5><p class="col-6">暂无</p></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <script src="/statics/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/statics/js/echarts.min.js"></script>
+    <script type="text/javascript" src="/statics/js/westeros.js"></script>
+    <script src="/statics/js/sidebars.js"></script>
+    <script src="/statics/js/jquery-3.6.0.min.js"></script>
+    <script src="/statics/js/content_storage_myjs.js"></script>
+    <script src="/statics/js/html5media.js"></script>
+
+</body>
+
+</html>
