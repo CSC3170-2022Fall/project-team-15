@@ -1,6 +1,11 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=9457768&assignment_repo_type=AssignmentRepo)
 # CSC3170 Course Project
 
+## Presentation video
+(you may need connect VPN)
+This is OneDrive Link:
+https://1drv.ms/v/s!ArhEtPmIXkX0khA5hVRwJLI8TqVS?e=d1aeYc
+
 ## Project Overall Description
 
 This is our implementation for the course project of CSC3170, 2022 Fall, CUHK(SZ). For details of the project, you can refer to [project-description.md](project-description.md). In this project, we will utilize what we learned in the lectures and tutorials in the course, and implement either one of the following major jobs:
