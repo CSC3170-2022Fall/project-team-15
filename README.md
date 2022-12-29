@@ -75,3 +75,7 @@ Our platform provides the following major functionalities:
 +  The assignment and the start-time of some operation with some machine could be further set under the constraint of plant appointment
 +  The processing record in end-time and expense of some operation could be written back once it is successfully finished
 +  The production information, like the manufacturing capacity of some plants, or the demand changes of some consumers within some period of time can be calculated.
+
+## Project Report
+
+Please check this [pdf](3170report_team15.pdf) for the report.
