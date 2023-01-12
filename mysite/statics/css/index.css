@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: url(../images/loginBg.webp) no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+.bigBox {
+  width: 70%;
+  margin: 0px auto 0;
+  background: #fff;
+  display: flex;
+  min-height: 98vh;
+  margin-bottom: 30px;
+}
+.layui-form {
+  width: 90%;
+  margin: auto;
+  padding: 30px 40px;
+  box-sizing: border-box;
+}
+.pageContent {
+  width: 28%;
+  height: 100%;
+  border-left: 2px solid #eee;
+  box-sizing: border-box;
+  padding-top: 100px;
+
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px !important;
+  padding: 10px 30px !important;
+}
+.item ,.factoryItem {
+  display: none;
+}
+.sureBtn,.cancel {
+  width: 150px;
+  height: 50px;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  border: 0;
+  background: #1776f1;
+  line-height: 50px;
+  text-align: center;
+  margin: 50px;
+}
+.cancel {
+  background-color: #999;
+  font-size: 18px;
+}
+.sureBtn a {
+  color: #fff;
+}
+
+.layui-input-block {
+  display: flex;
+  color: #000 !important;
+}
+.selectText,.selectTitle {
+  width: 300px;
+  margin-left: 30px;
+}
+.pageContent1 {
+  display: block;
+  border: 1px solid #999;
+  padding: 20px;
+  line-height: 30px;
+  margin: 0;
+  background-color: #fff;
+}
+.layui-form-label {
+  text-align: left;
+  padding-left: 0;
+  width: 200px;
+}
+.layui-layer-content {
+  overflow: visible !important;
+}
+.userName,.adress,.labelOne {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  margin-left: 0;
+  margin-right: 60px;
+  /* color: #fff !important; */
+}
+.labelOne {
+  width: 60px;
+  padding: 0;
+  box-sizing: border-box;
+  margin-right: 10px !important;
+}
+.userInfo .layui-form-item {
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+}
+.pageContent12 {
+  display: none;
+}
+.hide3 {
+  display: none;
+}
+.active1 {
+  display: block;
+}
+.hide1 {
+  display: none;
+}
+.active2 {
+  display: block;
+}
+.hide2 {
+  display: none;
+}
+.boxBg1 {
+  margin: 60px auto;
+  margin-top: 10px;
+  padding: 30px 30px;
+  background: #eee;
+  color: #000;
+}
+.layui-badge-rim, .layui-border, .layui-colla-content, .layui-colla-item, .layui-collapse, .layui-elem-field, .layui-form-pane .layui-form-item[pane], .layui-form-pane .layui-form-label, .layui-input, .layui-layedit, .layui-layedit-tool, .layui-panel, .layui-quote-nm, .layui-select, .layui-tab-bar, .layui-tab-card, .layui-tab-title, .layui-tab-title .layui-this:after, .layui-textarea {
+  border-color: #999 !important;
+}

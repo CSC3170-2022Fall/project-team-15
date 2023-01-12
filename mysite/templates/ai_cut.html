@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>AI调度管理平台</title>
+    <!-- Bootstrap core CSS -->
+    <link href="/statics/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/statics/css/all.css" rel="stylesheet">
+    <link href="/statics/css/myfont.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="/statics/css/sidebars.css" rel="stylesheet">
+</head>
+
+<body>
+<main>
+    <div class="col-2">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="height: 100vh;">
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <i class="fas fa-cloud" style="font-size: 30px;"></i>
+                <span class="fs-4">&nbsp; AI调度管理平台</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link  text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        主页
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        智能标签
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        智能拆条
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        智能唱词
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        人脸检测
+                    </a>
+                </li>
+                <li>
+                    <a href="/content_storage/" class="nav-link text-white">
+                        <svg class="bi me-2" width="16" height="16">
+                        </svg>
+                        内容库
+                    </a>
+                </li>
+            </ul>
+            <hr>
+        </div>
+    </div>
+    <div class="col-10 container-fluid bg-light">
+        <div class="row container-fluid bg-light">
+            <header class="p-3 mb-3 border-bottom">
+                <div class="container-fluid">
+                    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                            <li><a href="#" class="nav-link px-4 link-secondary">概况</a></li>
+                            <li><a href="#" class="nav-link px-4 link-dark">用户管理</a></li>
+                            <li><a href="#" class="nav-link px-4 link-dark">开发者支持</a></li>
+                            <li><a href="#" class="nav-link px-4 link-dark">帮助</a></li>
+                        </ul>
+
+                        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                        </form>
+
+                        <div class="dropdown text-end">
+                            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle"
+                               id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="/statics/images/头像.jpg" alt="mdo" width="32" height="32"
+                                     class="rounded-circle">
+                            </a>
+                            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item" href="#">个人信息</a></li>
+                                <li><a class="dropdown-item" href="#">安全凭证</a></li>
+                                <li><a class="dropdown-item" href="#">钱包</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">退出登录</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="row my-3 flex-wrap mx-3 shadow">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="task_list_click">任务列表</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="task_setting_click">任务配置</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="aipack_click">包装/特效列表</a>
+                </li>
+            </ul>
+            <div id="task_list" class="row flex-wrap">
+                <div class="row m-1" style="font-family: pinfang;">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">任务ID</th>
+                            <th scope="col">媒体名称</th>
+                            <th scope="col" style="min-width: 120px;">任务流ID</th>
+                            <th scope="col" style="min-width: 120px;">创建时间</th>
+                            <th scope="col" style="min-width: 120px;">完成时间</th>
+                            <th scope="col">状态</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="task_list_table">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div id="aipack" class="row flex-wrap visually-hidden">
+                <div class="row mb-1 mx-1 mt-3 w-auto">
+                    <button type="button" class="btn btn-primary text-nowrap" data-bs-toggle="modal"
+                            data-bs-target="#pack_modal">导入包装/特效
+                    </button>
+                </div>
+                <div class="modal fade" id="pack_modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">导入包装/特效</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="recipient-name" class="col-form-label">包装路径:</label>
+                                        <input type="file" class="form-control visually-hidden" id="file_name"
+                                               onchange="document.getElementById('file_path').value = this.value">
+                                        <div class="row">
+                                            <button type="button" class="btn btn-primary col-2 ms-3" id="choose_1"
+                                                    onclick="document.getElementById('file_name').click()">选择
+                                            </button>
+                                            <input type="text" class="form-control col-6" style="width: 350px;"
+                                                   id="file_path">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-1" style="font-family: pinfang;">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">包装ID</th>
+                            <th scope="col">包装名称</th>
+                            <th scope="col" style="min-width: 120px;">包装类型</th>
+                            <th scope="col" style="min-width: 120px;">包装标签</th>
+                            <th scope="col">状态</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>1</th>
+                            <td>毛玻璃特效</td>
+                            <td>特效</td>
+                            <td>无</td>
+                            <td><i class="fas fa-check-circle" style="color:lawngreen;"></i></td>
+                            <td><a href="#">查看详情</a></td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>风芒logo</td>
+                            <td>包装</td>
+                            <td>无</td>
+                            <td><i class="fas fa-check-circle" style="color:lawngreen;"></i></td>
+                            <td><a href="#">查看详情</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div id="task_setting" class="row flex-wrap visually-hidden">
+                <div class="row mb-1 mx-1 mt-3 w-auto">
+                    <button type="button" class="btn btn-primary text-nowrap" data-bs-toggle="modal"
+                            data-bs-target="#cut_modal">新建工作流
+                    </button>
+                </div>
+                <div class="modal fade" id="cut_modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel2">新建工作流</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <div class="row my-1">
+                                            <label for="recipient-name" class="col-form-label col-3 d-inline">工作流名称:</label>
+                                            <input type="text" class="form-control col-9 d-inline w-auto" id="task_name">
+                                        </div>
+                                        <div class="row my-1">
+                                            <label for="recipient-name" class="col-form-label col-3 d-inline">包装/特效:</label>
+                                            <input type="text" class="form-control col-8 d-inline w-auto dropdown-toggle" id="choose_pack" data-bs-toggle="dropdown">
+                                            <ul class="dropdown-menu w-50" aria-labelledby="choose_pack">
+                                                <li><a class="dropdown-item" href="#" onclick="choosePack('无')">无</a></li>
+                                                <li><a class="dropdown-item" href="#" onclick="choosePack('毛玻璃特效')">毛玻璃特效</a></li>
+                                                <li><a class="dropdown-item" href="#" onclick="choosePack('风芒logo')">风芒logo</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="submit_createTask"  data-bs-dismiss="modal">提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-1" style="font-family: pinfang;">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">工作流ID</th>
+                            <th scope="col">创建时间</th>
+                            <th scope="col" style="min-width: 120px;">工作流名称</th>
+                            <th scope="col" style="min-width: 120px;">特效/包装</th>
+                            <th scope="col">状态</th>
+                            <th scope="col">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody id="taskflow_list">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="/statics/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/statics/js/echarts.min.js"></script>
+<script type="text/javascript" src="/statics/js/westeros.js"></script>
+<script src="/statics/js/sidebars.js"></script>
+<script src="/statics/js/jquery-3.6.0.min.js"></script>
+<script src="/statics/js/ai_cut_myjs.js"></script>
+
+</body>
+
+</html>

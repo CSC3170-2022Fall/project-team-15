@@ -1,0 +1,124 @@
+@startuml entity
+entity consumer {
+* consumer_ID
+--
+* location
+* package_ID
+* conBankAccount_ID
+plant_ID
+}
+
+entity plantOwner {
+* plantOwner_ID
+--
+* plantBankAccount_ID
+* plant_ID
+}
+
+entity packages {
+* package_ID
+--
+* timeRequired
+* Budget
+}
+
+entity plant {
+* plant_ID
+--
+* location
+}
+
+entity chip {
+* chip_ID
+--
+* chipType_ID
+machine_ID
+}
+
+entity machine {
+* machine_ID
+--
+* machineType_ID
+}
+
+entity operation {
+* operation_ID
+--
+* operationType_ID
+}
+
+entity machine_ability_operation {
+* operationType_ID
+* machineType_ID
+--
+* feasibility
+time
+expense
+}
+
+entity chip_pre_operation {
+* operation_ID 
+* chipType_ID
+--
+* precedency 
+}
+
+entity planRecord {
+* operation_ID
+* machine_ID
+--
+* planStartTime
+* planEndTime
+* processExpense
+}
+
+entity actualRecord {
+* operation_ID
+* machine_ID
+--
+* actStartTime
+* actEndTime
+* processExpense
+}
+/'
+The name of each relation schema will be commented on the line on top
+'/
+'orders
+consumer ||..|{ packages: ↓ orders
+'packagedChips
+packages }|..|{ chip: ↓ contains
+'chipLocationPlant
+chip }|..|{ plant: ↓ processed by
+'plantOwnership
+plant }|..|| plantOwner: ↑ owns
+'chipRequiredMachine
+chip }|..|{ machine: ↓ requires
+'chipRequiredOperation
+chip }|..|{ chip_pre_operation
+'operatingSteps
+chip_pre_operation }|..|{ operation
+'machineLocation
+plant ||..|{ machine: ↓ holds
+'machineOperationDetails
+machine }|..|{ machine_ability_operation
+'operationDetails
+operation }|..|{ machine_ability_operation
+'machineOperation
+machine }|..|| operation: ↓ processes
+
+
+planRecord }|..|| operation
+'machinePlanRecord
+planRecord }|..|| machine
+'operationActual
+actualRecord }|..|| operation
+'machineActualRecord
+actualRecord }|..|| machine
+
+/'
+Link to the relational schemas here
+https://docs.google.com/document/d/1HcfNmuxfEpQvPUor1j3vgVMmyTRDVfxkDxOJ8EEHKnU/edit?usp=sharing
+Make modifications to it as you wish (pls comment for others to read)
+'/
+
+@enduml
